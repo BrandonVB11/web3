@@ -1,0 +1,45 @@
+/* Style de base pour le conteneur principal */
+div {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: black;
+    color: cyan;
+  }
+  
+  /* Style pour l'en-tête */
+  .Header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: cyan;
+  }
+  
+  /* Style pour le contenu */
+  .Content {
+    margin-bottom: 20px;
+    color: cyan;
+  }
+  
+  /* Style pour la liste des parties */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    color: cyan;
+  }
+  
+  /* Style pour chaque partie */
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Style pour le total */
+  .Total {
+    text-align: right;
+    font-weight: bold;
+    color: cyan;
+  }
+  
