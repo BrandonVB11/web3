@@ -1,22 +1,21 @@
 /* eslint-disable*/
-
-
+import useLocalStorage from 'hooks/useLocalStorage'
 import { useState } from 'react'
 import Display from 'components/Display/Display'
 import Button from 'components/Button/Button'
+
+const STORAGE_COUNTER_KEY = 'counter'
 
 const App = () => {
   const [ counter, setCounter ] = useLocalStorage(STORAGE_COUNTER_KEY, 0)
   const ChangeCount = (delta) => setCounter(counter + delta) 
  
-$
   return (
     <div>
       <Display counter={counter}/>
 
       <Button
         changeCount={ChangeCount}
-        
         delta={1}
         text='plus'
       />
