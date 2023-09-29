@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import Button from 'components/Button/Button';
 import Statistics from 'components/Statistics/Statistics';
+import Loading from 'components/Loading/Loading';
 
 
 
@@ -13,6 +14,10 @@ const [valueBad, setBad] = useState(0)
 const [valueTotal, setTotal] = useState(0)
 const [valueAverage, setAverage] = useState(0)
 const [valuePositive, setPositive] = useState(0)
+const [valueLoading, setLoading] = useState(true)
+
+
+setTimeout(() => setLoading(false), 3000);
 
 const handleGoodClick = () => {
   const updateGood = valueGood + 1
@@ -38,8 +43,9 @@ const handleBadClick = () => {
   setPositive((valueGood / (valueGood + valueNeutral + updateBad)) * 100)
 }
 
-
-
+  if (valueLoading) {
+    return <Loading />;
+  }
   return (
     <div className="App">
       <h1>Give Feedback</h1>
