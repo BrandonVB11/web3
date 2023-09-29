@@ -1,0 +1,22 @@
+/*fais moi le css de App*/
+p {
+  color: cyan;
+}
+
+button {
+  background-color: cyan;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+
+h1 {
+  color: cyan;
+  text-overflow: initial;
+}
+
+body {
+  background-color: black;
+}
