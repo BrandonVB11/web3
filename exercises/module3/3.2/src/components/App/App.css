@@ -1,0 +1,52 @@
+/* Style de base pour le conteneur principal */
+div {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #0D7491;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: black;
+    color: #0D7491;
+  }
+
+  img {
+    width: 50%;
+    height: auto;
+    margin-left: 270px;
+    margin-right: auto;
+  }
+  
+  /* Style pour l'en-tête */
+  .Header {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #0D7491;
+  }
+  
+  /* Style pour le contenu */
+  .Content {
+    margin-bottom: 20px;
+    color: #0D7491;
+  }
+  
+  /* Style pour la liste des parties */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    color: #0D7491;
+  }
+  
+  /* Style pour chaque partie */
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Style pour le total */
+  .Total {
+    text-align: right;
+    font-weight: bold;
+    color: #0D7491;
+  }
+  
