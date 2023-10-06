@@ -1,0 +1,5 @@
+creer un dossier avec Vite :
+npm create vite@latest Nom du fichier -- --template react
+
+creer un dossier sans Vite :
+npx create-react-app Nom du fichier
