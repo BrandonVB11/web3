@@ -1,34 +1,30 @@
 import { useState } from 'react'
+import Person from 'components/Person/Person'
 
 const App = () => {
   const [persons, setPersons] = useState([
-    { name: 'Arto Hellas' }
+    { name: 'Arto Hellas',
+     number: '040-123456' }
   ]) 
   const [newName, setNewName] = useState('')
+  const [newNumber, setNewNumber] = useState('')
 
 const addPerson = (event) => {
   event.preventDefault()
-  
-   // Vérifier si le nom existe déjà dans le tableau
- if (persons.some(person => person.name === newName)) {
-  alert(`${newName} existe déjà dans la liste !`)
-  return; // Ne pas ajouter le nom s'il existe déjà
-}
-  const personObject = {
+    const personObject = {
     name: newName,
+    number: newNumber,
     id: persons.length + 1,
-  }
-
+  }  
   setPersons(persons.concat(personObject))
   setNewName('')
+  setNewNumber('')
 }
 
 const handlePersonChange = (event) => {
   console.log(event.target.value)
   setNewName(event.target.value)
 }
-
-
 
   return (
     <div>
@@ -40,6 +36,11 @@ const handlePersonChange = (event) => {
             onChange={handlePersonChange}
           />
         </div>
+        <div>number: <input 
+        value={newNumber}
+        onChange={handlePersonChange}
+        />
+        </div>
         <div>
           <button type="submit">add</button>
         </div>
@@ -47,10 +48,11 @@ const handlePersonChange = (event) => {
       <h2>Numbers</h2>
       <ul>
         {persons.map(person =>
-          <li key={person.id}>{person.name}</li>
+          <Person key={person.id} name={person.name} number={person.number} />
         )}
       </ul>
       <div>debug: {newName}</div>
+      <div>debug: {newNumber}</div>
     </div>
   )
 }
