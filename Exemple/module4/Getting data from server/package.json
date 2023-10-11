@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "axios": "^1.5.1"
+  },
+  "devDependencies": {
+    "server": "json-server -p3001 --watch db.json"
+  }
+}
