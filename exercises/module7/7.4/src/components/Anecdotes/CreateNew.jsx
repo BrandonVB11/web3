@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, Form } from 'antd';
+import { Button, Checkbox, Form, Input, Alert } from 'antd';
 
 const CreateNew = ({ addNew }) => {
   const [content, setContent] = useState('');
@@ -19,32 +19,52 @@ const CreateNew = ({ addNew }) => {
   return (
     <div>
       <h2>create a new anecdote</h2>
-      <Form onSubmit={handleSubmit}>
-        <div>
-          content
-          <input
-            name="content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-          />
-        </div>
-        <div>
-          author
-          <input
-            name="author"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-          />
-        </div>
-        <div>
-          url for more info
-          <input
-            name="info"
-            value={info}
-            onChange={(e) => setInfo(e.target.value)}
-          />
-        </div>
-       <Button type="primary" danger ghost>Creat</Button>
+
+      <Form name="newAnecdote" onFinish={onFinish} onFinishFailed={onFinishFailed}>
+        <Form.Item
+          label="content"
+          name="content"
+          rules={[
+            {
+              required: true,
+              message: 'Please input your content!',
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="author"
+          name="author"
+          rules={[
+            {
+              required: true,
+              message: 'Please input an author!',
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item
+          label="url for more info"
+          name="info"
+          rules={[
+            {
+              required: true,
+              message: 'Please input a url!',
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+
+        <Form.Item>
+          <Button type="primary" htmlType="submit">
+            create
+          </Button>
+        </Form.Item>
       </Form>
     </div>
   );
